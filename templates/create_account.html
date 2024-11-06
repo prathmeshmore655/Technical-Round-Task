@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href = "static/css/index.css">
+
+</head>
+<body>
+
+    <section id="login_page" class="login_page">
+
+
+        <img src="static/img/background.jpg" alt="" id="bg_img">
+
+        <div class="login_form">
+
+            
+
+                
+
+
+            <form action="" method="post" id="org_form">
+                {% csrf_token %}
+
+                        
+
+
+                <div class="form">
+
+                        <center>
+                            <h1>
+                                Create Account
+                            </h1>
+                        </center>
+
+
+                    <div class="name">
+
+                        <label for="">Name : </label>
+                        <input type="text" id="first_name" name="first_name" required>
+                        <input type="text" id="last_name" name="last_name" required>
+
+                    </div>
+
+                    <label for="">Username : </label>
+                    <input type="text" name="username" id="username" required>
+
+                    <label for="">Password :</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <label for="">Confirm Password : </label>
+                    <input type="password" id="c_password" required>
+
+                    <button type="button" id="submit" onclick="submit_form()">
+                        Submit
+                    </button>
+
+                    <p>
+                        Alredy Have An Account !
+                        <a href="login" style="color: red;">
+                            Log In Here
+                        </a>
+
+                    </p>
+                </div>
+
+                </form>
+
+
+
+                <div class="content">
+
+                    <label style="color: white;font-size: 45px;font-weight: 800;">
+                        Stay connected, stay together.
+                    </label>
+
+                    <p style="color: lightgray;font-size: x-large;">
+                        Enjoy real-time messaging, group chats, and secure, private conversations—all in one place
+                    </p>
+                </div>
+
+        </div>
+    </section>
+    
+</body>
+
+<script src="static/js/create_account.js">
+
+
+</script>
+</html>

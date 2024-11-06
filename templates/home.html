@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+
+
+    <link rel="stylesheet" href="static/css/home.css">
+
+
+</head>
+
+
+<body class="container">
+
+
+    <main>
+
+
+
+        <section id="list_section">
+
+
+            <div class="login_user">
+
+                <label for="">
+                    {{ l_user.username }}
+                </label>
+
+            </div>
+
+
+            <hr>
+
+
+            <div>
+
+
+                <input type="text" placeholder="Search...." id="search" oninput="searchUsers()">
+
+
+                <button style="font-size: medium;background-color: #007bff;padding: 10px;color: white;border-radius: 5px;border: transparent;">
+                    Search
+                </button>
+
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="list">
+
+
+                <div class="typing_name">
+
+
+                </div>
+
+
+
+                
+                {% for n in users %}
+
+
+                <div class="user_card">
+
+
+                    <button class="name" id="{{ n.pk }}" onclick="user_click('{{ n.pk }}' , '{{ n.first_name}}' , '{{ n.last_name }}' , '{{ n.username }}' , '{{ l_user.username }}' , '{{ l_user.pk }}')">
+                       
+                        <label for="">
+
+
+                            {{ n.first_name }}   &nbsp;    {{ n.last_name }}
+
+
+                        </label>
+                        
+
+                    </button>
+
+
+                </div>
+
+                {% endfor %}
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <section class="chat_box">
+
+
+            <div class="username" id="username">
+
+
+            </div>
+
+
+
+            <div class="chat_messages">
+
+
+                <div class="self_user" id="self_user">
+
+
+
+
+                </div>
+
+
+            </div>
+
+            <section id="box">
+
+
+
+                <div class="chat_input">
+
+
+                    <input type="text" placeholder="Enter Message" id="message" oninput="typing_handler('{{ user.pk }}')">
+
+
+                    <button onclick="sendMessage('{{ l_user.pk }}')">
+
+                        🗨
+
+                    </button>
+
+
+                    <!-- <div style="display: flex;align-items: center;gap: 20px;">
+                    <label for="" style="font-size: 20px;">
+                        Add Media : 
+                    </label>
+                    <input type="file" placeholder="Add Media" id="media">
+                    </div> -->
+
+
+                </div>
+
+
+            </section>
+
+
+
+
+        </section>
+
+
+
+        <section class="tools">
+
+
+            <button id="profile">
+                ⚙
+            </button>
+
+
+        </section>
+
+
+    </main>
+
+
+</body>
+
+
+
+<script src="static/js/home.js"></script>
+
+
+</html>
